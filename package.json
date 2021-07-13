@@ -1,0 +1,13 @@
+{
+  "name": "client-server-example",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node -r esm ."
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
