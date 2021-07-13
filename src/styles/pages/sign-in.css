@@ -1,0 +1,53 @@
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.form__title {
+  margin: 14rem 0 1.2rem 0;
+  color: transparent;
+  background-image: linear-gradient(to right, #21405c, #4f9adb);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+
+  font-size: 1.7rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.fieldset {
+  border: none;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.3rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline-color: #3d76a8;
+
+  margin-bottom: 1rem;
+}
+
+.button {
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  background-color: #21405c;
+  transition: filter 0.2s;
+}
+
+.button:hover {
+  filter: brightness(1.2);
+}

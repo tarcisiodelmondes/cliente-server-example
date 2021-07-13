@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="/sign-in.css" />
+
+    <title>Entrar - Exemplo de Cliente/Servidor</title>
+  </head>
+  <body>
+    <main role="main" class="main">
+      <div class="container__form">
+        <h1 class="form__title">Login Cliente/Servidor</h1>
+
+        <form class="form" action="/authenticate" role="form" method="POST">
+          <fieldset class="fieldset fieldset__email">
+            <label class="sr-only" for="email">Digite seu e-mail</label>
+
+            <input
+              class="form__input"
+              type="email"
+              name="email"
+              id="email"
+              inputmode="email"
+              placeholder="E-mail"
+              autocomplete="username"
+              required
+            />
+          </fieldset>
+
+          <fieldset class="fieldset fieldset__password">
+            <label class="sr-only" for="password">Digite sua senha</label>
+
+            <input
+              class="form__input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Senha"
+              autocomplete="current-password"
+              required
+            />
+          </fieldset>
+
+          <button role="button" class="button" type="submit">Entrar</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
