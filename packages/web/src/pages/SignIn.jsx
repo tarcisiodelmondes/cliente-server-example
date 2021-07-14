@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+import React from "react";
 
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/sign-in.css" />
+import "../styles/pages/sign-in.css";
 
-    <title>Entrar - Exemplo de Cliente/Servidor</title>
-  </head>
-  <body>
+export function SignIn() {
+  return (
     <main role="main" class="main">
       <div class="container__form">
         <h1 class="form__title">Login Cliente/Servidor</h1>
 
-        <form class="form" action="/authenticate" role="form" method="POST">
+        <form class="form" action="/authenticate" method="POST">
           <fieldset class="fieldset fieldset__email">
-            <label class="sr-only" for="email">Digite seu e-mail</label>
+            <label class="sr-only" for="email">
+              Digite seu e-mail
+            </label>
 
             <input
               class="form__input"
@@ -32,7 +27,9 @@
           </fieldset>
 
           <fieldset class="fieldset fieldset__password">
-            <label class="sr-only" for="password">Digite sua senha</label>
+            <label class="sr-only" for="password">
+              Digite sua senha
+            </label>
 
             <input
               class="form__input"
@@ -45,9 +42,11 @@
             />
           </fieldset>
 
-          <button role="button" class="button" type="submit">Entrar</button>
+          <button class="button" type="submit">
+            Entrar
+          </button>
         </form>
       </div>
     </main>
-  </body>
-</html>
+  );
+}
