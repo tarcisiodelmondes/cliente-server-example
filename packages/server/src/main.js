@@ -1,38 +1,14 @@
-import { readFile } from "fs";
-import { createServer } from "http";
-import path from "path";
-import { parse } from "querystring";
+import express from "express";
 
-const server = createServer((req, res) => {
-  switch (req.url) {
-    case "/":
-      res.writeHead(200, { "Content-Type": "application/json" });
-      res.write(
-        JSON.stringify({
-          name: "Tarcisio",
-          lastName: "Delmondes",
-        })
-      );
-      res.end();
-      break;
+const server = express();
 
-    case "/authenticate":
-      let data = "";
-      req.on("data", (chunk) => {
-        data += chunk;
-      });
-      req.on("end", () => {
-        res.end();
-      });
+server.get("/status", (_, res) => {
+  res.send({ status: "okay" });
+});
 
-      break;
-
-    default:
-      res.writeHead(404);
-      res.write("Not found");
-      res.end();
-      break;
-  }
+server.post("/authenticate", express.json(), (req, res) => {
+  console.log(req.body.email);
+  res.send();
 });
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
