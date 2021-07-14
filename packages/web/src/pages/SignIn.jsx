@@ -1,48 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/pages/sign-in.css";
 
 export function SignIn() {
-  return (
-    <main role="main" class="main">
-      <div class="container__form">
-        <h1 class="form__title">Login Cliente/Servidor</h1>
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-        <form class="form" action="/authenticate" method="POST">
-          <fieldset class="fieldset fieldset__email">
-            <label class="sr-only" for="email">
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const data = fetch("http://127.0.0.1:3001/authenticate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }
+
+  return (
+    <main role="main" className="main">
+      <div className="container__form">
+        <h1 className="form__title">Login Cliente/Servidor</h1>
+
+        <form className="form" onSubmit={handleSubmit}>
+          <fieldset className="fieldset fieldset__email">
+            <label className="sr-only" htmlFor="email">
               Digite seu e-mail
             </label>
 
             <input
-              class="form__input"
+              className="form__input"
               type="email"
-              name="email"
               id="email"
-              inputmode="email"
+              inputMode="email"
               placeholder="E-mail"
-              autocomplete="username"
+              autoComplete="username"
               required
+              onChange={(e) => setEmail(e.currentTarget.value)}
+              value={email}
             />
           </fieldset>
 
-          <fieldset class="fieldset fieldset__password">
-            <label class="sr-only" for="password">
+          <fieldset className="fieldset fieldset__password">
+            <label className="sr-only" htmlFor="password">
               Digite sua senha
             </label>
 
             <input
-              class="form__input"
+              className="form__input"
               type="password"
-              name="password"
               id="password"
               placeholder="Senha"
-              autocomplete="current-password"
+              autoComplete="current-password"
               required
+              onChange={(e) => setPassword(e.currentTarget.value)}
+              value={password}
             />
           </fieldset>
 
-          <button class="button" type="submit">
+          <button className="button" type="submit">
             Entrar
           </button>
         </form>
