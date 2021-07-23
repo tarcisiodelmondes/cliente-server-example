@@ -4,11 +4,24 @@
   "main": "src/main.js",
   "license": "MIT",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r esm .",
     "start": "node -r esm ."
   },
-  "dependencies": {
-    "cors": "^2.8.5",
+  "devDependencies": {
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "apollo-server-express": "2.13.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1",
+    "uuid": "^8.3.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/data/*"
+    ]
   }
 }
